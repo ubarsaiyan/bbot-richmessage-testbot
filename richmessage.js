@@ -11,14 +11,22 @@ bot.global.text(/text button with url/i, (b) => {
   return b.respond().catch((err) => console.error(err))
 })
 
-// 2. Text Button With Msg in Chat Window (Not fully working: Not passing the msg field)
+// 2. Text Button With Msg in Chat Window (Working via custom JSON but quickReply not passing the msg field)
 bot.global.text(/text button with msg in chat window/i, (b) => {
-  b.envelope.write('text button with msg in chat window')
-  b.envelope.payload.quickReply({ 
-    msg: 'hello (message sent via RichMessageBot) :D',
-    text: 'hello in chat window',
-  })
-  return b.respond().catch((err) => console.error(err))
+  // b.envelope.write('text button with msg in chat window')
+  // b.envelope.payload.quickReply({ 
+  //   msg: 'hello (message sent via RichMessageBot) :D',
+  //   text: 'hello in chat window',
+  // })
+  return b.respond({
+      "title": "text button with msg in chat window",
+      "actions": [{
+          "type": "button",
+          "text": "Say hello in chat window?",
+          "msg": "hello (message sent via RichMessageBot) :D",
+          "msg_in_chat_window": true
+      }]
+  }).catch((err) => console.error(err))
 })
 
 // 3. Image Button With Url
@@ -95,7 +103,7 @@ bot.global.text(/button with full webview/i, (b) => {
   return b.respond().catch((err) => console.error(err))
 })
 
-// 10. Url Button With Tall Webview (Not working: Not passing the webview_height_ratio)
+// 10. Url Button With Tall Webview
 bot.global.text(/button with tall webview/i, (b) => {
   b.envelope.write('button with tall webview')
   b.envelope.payload.quickReply({
@@ -107,7 +115,7 @@ bot.global.text(/button with tall webview/i, (b) => {
   return b.respond().catch((err) => console.error(err))
 })
 
-// 11. Url Button With Compact Webview (Not working: Not passing the webview_height_ratio)
+// 11. Url Button With Compact Webview
 bot.global.text(/button with compact webview/i, (b) => {
   b.envelope.write('button with compact webview')
   b.envelope.payload.quickReply({
