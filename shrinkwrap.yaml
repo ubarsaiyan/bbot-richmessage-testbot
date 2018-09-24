@@ -1,10 +1,10 @@
 dependencies:
-  bbot: 1.3.1
+  bbot: 1.3.2
 packages:
-  /@rocket.chat/sdk/0.2.7:
+  /@rocket.chat/sdk/0.2.9:
     dependencies:
       '@types/lru-cache': 4.1.1
-      '@types/node': 9.6.31
+      '@types/node': 9.6.32
       asteroid: github.com/rocketchat/asteroid/a76a53254e381f9487aa2a9be3d874c9a2df6552
       lru-cache: 4.1.3
       node-rest-client: 3.1.0
@@ -13,10 +13,10 @@ packages:
       node: '> 8.0.0'
       npm: '> 5.0.0'
     resolution:
-      integrity: sha512-LlTz0YICPppuBD3K0XJMasvXVsv+VSHtcZV7h+gG13QN2JND8T5L5galrAp8quCtwmUAJRaOPdXFwmpbMTeNcQ==
+      integrity: sha512-ERRJRF4iLeZ2prefkfwjCm7eyKGZcD6jAM/k6MKel1nu6LTexhsOPsYUTj4qGNXSyEk0BL1/5fOymvzYyljxFQ==
   /@types/bson/1.0.11:
     dependencies:
-      '@types/node': 10.9.4
+      '@types/node': 10.11.0
     dev: false
     resolution:
       integrity: sha512-j+UcCWI+FsbI5/FQP/Kj2CXyplWAz39ktHFkXk84h7dNblKRSoNJs95PZFRd96NQGqsPEPgeclqnznWZr14ZDA==
@@ -30,7 +30,7 @@ packages:
       integrity: sha512-KEIlhXnIutzKwRbQkGWb/I4HFqBuUykAdHgDED6xqwXJfONCjF5VoE0cXEiurh3XauygxzeDzgtXUqvLkxFzzA==
   /@types/form-data/2.2.1:
     dependencies:
-      '@types/node': 10.9.4
+      '@types/node': 10.11.0
     dev: false
     resolution:
       integrity: sha512-JAMFhOaHIciYVh8fb5/83nmuO/AHwmto+Hq7a9y8FzLDcC1KCU344XDOMEmahnrTFlHjgh4L0WJFczNIX2GxnQ==
@@ -45,35 +45,35 @@ packages:
     dev: false
     resolution:
       integrity: sha512-8mNEUG6diOrI6pMqOHrHPDBB1JsrpedeMK9AWGzVCQ7StRRribiT9BRvUmF8aUws9iBbVlgVekOT5Sgzc1MTKw==
-  /@types/mongodb/3.1.4:
+  /@types/mongodb/3.1.9:
     dependencies:
       '@types/bson': 1.0.11
       '@types/events': 1.2.0
-      '@types/node': 10.9.4
+      '@types/node': 10.11.0
     dev: false
     resolution:
-      integrity: sha512-C6vVOp2DzYiWpn0u+FuzHgkV1YdGlnLJfav8I2sKnOxSKxuLkzkZhNu7G4BWndKgujdDxgkECHhW+f6/wi+Exg==
-  /@types/mongoose/5.2.11:
+      integrity: sha512-3vv3ad/AmiXz/MI/dKVzJNo1FFx/PYp6wlgzbKPPnOnTXnNWKxV9pI/sfReI/7ji0OtxSWByW0LWCNEClyy/vA==
+  /@types/mongoose/5.2.17:
     dependencies:
       '@types/events': 1.2.0
-      '@types/mongodb': 3.1.4
-      '@types/node': 10.9.4
+      '@types/mongodb': 3.1.9
+      '@types/node': 10.11.0
     dev: false
     resolution:
-      integrity: sha512-S1f8KwChMq37SLwlPUzpUIOKxXf8PdkLZ7BIz63SxOyhYbyVHLc33ztQBnSWmwAllwzu5hreMeLJleC7zXGnuw==
-  /@types/node/10.9.4:
+      integrity: sha512-+sZWg0RGI9BrUjayOsRyc4+TxJ7N0qBW5J5ic/GNL0clwv31WmeXki8UhcU0+71XtQR/wRNpEsf8jbRe9rXbEg==
+  /@types/node/10.11.0:
     dev: false
     resolution:
-      integrity: sha512-fCHV45gS+m3hH17zgkgADUSi2RR1Vht6wOZ0jyHP8rjiQra9f+mIcgwPQHllmDocYOstIEbKlxbFDYlgrTPYqw==
-  /@types/node/9.6.31:
+      integrity: sha512-R4Dvw6KjSYn/SpvjRchBOwXr14vVVcFXCtnM3f0aLvlJS8a599rrcEoihcP2/+Z/f75E5GNPd4aWM7j1yei9og==
+  /@types/node/9.6.32:
     dev: false
     resolution:
-      integrity: sha512-kIVlvUBizL51ALNMPbmcZoM7quHyB7J6fLRwQe22JsMp39nrVSHdBeVVS3fnQCK1orxI3O8LScmb8cuiihkAfA==
+      integrity: sha512-5+L3wQ+FHoQ589EaH6rYICleuj8gnunq+1CJkM9fxklirErIOv+kxm3s/vecYnpJOYnFowE5uUizcb3hgjHUug==
   /@types/request/2.47.1:
     dependencies:
       '@types/caseless': 0.12.1
       '@types/form-data': 2.2.1
-      '@types/node': 10.9.4
+      '@types/node': 10.11.0
       '@types/tough-cookie': 2.3.3
     dev: false
     resolution:
@@ -168,7 +168,7 @@ packages:
       integrity: sha1-WY/JSla67ZdfGUV04PVy/Y5iekg=
   /@types/through/0.0.29:
     dependencies:
-      '@types/node': 10.9.4
+      '@types/node': 10.11.0
     dev: false
     resolution:
       integrity: sha512-9a7C5VHh+1BKblaYiq+7Tfc+EOmjMdZaD1MYtkQjSoxgB69tBjW98ry6SKsi4zEIWztLOMRuL87A3bdT/Fc/4w==
@@ -176,10 +176,10 @@ packages:
     dev: false
     resolution:
       integrity: sha512-MDQLxNFRLasqS4UlkWMSACMKeSm1x4Q3TxzUC7KQUsh6RK1ZrQ0VEyE3yzXcBu+K8ejVj4wuX32eUG02yNp+YQ==
-  /@types/yargs/11.1.1:
+  /@types/yargs/11.1.2:
     dev: false
     resolution:
-      integrity: sha512-Awgju4dqD8kHXX3jc/B/LaryJC7MsyNfnbN62lIbFzTi0GewH64zrkh4bxo/YTgVEK6r9V3GNecxMhXTJw0+jA==
+      integrity: sha512-zG61PAp2OcoIBjRV44wftJj6AJgzJrOc32LCYOBqk9bdgcdzK5DCJHV9QZJ60+Fu+fOn79g8Ks3Gixm4CfkZ+w==
   /ajv/5.5.2:
     dependencies:
       co: 4.6.0
@@ -229,7 +229,7 @@ packages:
       integrity: sha1-8S4PPF13sLHN2RRpQuTpbB5N1SU=
   /async/2.6.1:
     dependencies:
-      lodash: 4.17.10
+      lodash: 4.17.11
     dev: false
     resolution:
       integrity: sha512-fNEiL2+AZt6AlAw/29Cr0UDe4sRAHCpEHh54WMz+Bb7QfNcFw4h3loofyJpLeQs4Yx7yuqu/2dLgM5hKOs6HlQ==
@@ -245,18 +245,18 @@ packages:
     dev: false
     resolution:
       integrity: sha512-ReZxvNHIOv88FlT7rxcXIIC0fPt4KZqZbOlivyWtXLt8ESx84zd3kMC6iK5jVeS2qt+g7ftS7ye4fi06X5rtRQ==
-  /bbot/1.3.1:
+  /bbot/1.3.2:
     dependencies:
-      '@rocket.chat/sdk': 0.2.7
+      '@rocket.chat/sdk': 0.2.9
       '@types/inquirer': 0.0.42
-      '@types/mongoose': 5.2.11
-      '@types/node': 10.9.4
+      '@types/mongoose': 5.2.17
+      '@types/node': 10.11.0
       '@types/request': 2.47.1
-      '@types/yargs': 11.1.1
+      '@types/yargs': 11.1.2
       chalk: 2.4.1
       dotenv: 6.0.0
       inquirer: 6.2.0
-      mongoose: /mongoose/5.2.14/mongoose@5.2.14
+      mongoose: /mongoose/5.2.17/mongoose@5.2.17
       request: 2.88.0
       to-regex-range: 4.0.2
       winston: 3.1.0
@@ -266,7 +266,7 @@ packages:
       node: '> 8.0.0'
       npm: '> 5.0.0'
     resolution:
-      integrity: sha512-QDnBTnuJg5SOIK2MAzBWX4CXG/7GMUrJzgHlsMEXUzax/g3gQ/MFe1F5F5f7whSLhDYU4o63wXF62lgiJ9N87A==
+      integrity: sha512-cKjTyu9UZCCyE9X+P/yd43+jGMEXT3btchq0zDSkYMWem9AGAa/2tS2LgDmRBuRZiaDcY+LxLyZVlmxm7/czew==
   /bcrypt-pbkdf/1.0.2:
     dependencies:
       tweetnacl: 0.14.5
@@ -357,9 +357,13 @@ packages:
     dev: false
     resolution:
       integrity: sha1-p9BVi9icQveV3UIyj3QIMcpTvCU=
+  /color-name/1.1.4:
+    dev: false
+    resolution:
+      integrity: sha512-dOy+3AuW3a2wNbZHIuMZpTcgjGuLU/uBL/ubcZF9OXbDo8ff4O8yVp5Bf0efS8uEoYo5q4Fx7dY9OgQGXgAsQA==
   /color-string/1.5.3:
     dependencies:
-      color-name: 1.1.3
+      color-name: 1.1.4
       simple-swizzle: 0.2.2
     dev: false
     resolution:
@@ -396,6 +400,15 @@ packages:
       node: '>= 0.8'
     resolution:
       integrity: sha1-cj599ugBrFYTETp+RFqbactjKBg=
+      tarball: 'http://registry.npmjs.org/combined-stream/-/combined-stream-1.0.6.tgz'
+  /combined-stream/1.0.7:
+    dependencies:
+      delayed-stream: 1.0.0
+    dev: false
+    engines:
+      node: '>= 0.8'
+    resolution:
+      integrity: sha512-brWl9y6vOB1xYPZcpZde3N9zDByXTosAeMDo4p1wzo6UMOX4vumB+TP1RZ76sfE6Md68Q0NJSrE/gbezd4Ul+w==
   /core-util-is/1.0.2:
     dev: false
     resolution:
@@ -430,6 +443,7 @@ packages:
     dev: false
     resolution:
       integrity: sha1-+HBX6ZWxofauaklgZkE3vFbwOdo=
+      tarball: 'http://registry.npmjs.org/debug/-/debug-2.2.0.tgz'
   /debug/3.1.0:
     dependencies:
       ms: 2.0.0
@@ -568,14 +582,14 @@ packages:
       node: '>=6'
     resolution:
       integrity: sha512-1yD6RmLI1XBfxugvORwlck6f75tYL+iR0jqwsOrOxMZyGYqUuDhJ0l4AXdO1iX/FTs9cBAMEk1gWSEx1kSbylg==
-  /follow-redirects/1.5.7:
+  /follow-redirects/1.5.8:
     dependencies:
       debug: 3.1.0
     dev: false
     engines:
       node: '>=4.0'
     resolution:
-      integrity: sha512-NONJVIFiX7Z8k2WxfqBjtwqMifx7X42ORLFrOZ2LTKGj71G3C0kfdyTqGqr8fx5zSX6Foo/D95dgGWbPUiwnew==
+      integrity: sha512-sy1mXPmv7kLAMKW/8XofG7o9T+6gAjzdZK4AJF6ryqQYUa/hnzgiypoeUecZ53x7XiqKNEpNqLtS97MshW2nxg==
   /forever-agent/0.6.1:
     dev: false
     resolution:
@@ -662,7 +676,7 @@ packages:
       cli-width: 2.2.0
       external-editor: 3.0.3
       figures: 2.0.0
-      lodash: 4.17.10
+      lodash: 4.17.11
       mute-stream: 0.0.7
       run-async: 2.3.0
       rxjs: 6.3.2
@@ -789,11 +803,11 @@ packages:
     dev: false
     resolution:
       integrity: sha1-LRd/ZS+jHpObRDjVNBSZ36OCXpk=
-  /lodash/4.17.10:
+  /lodash/4.17.11:
     dev: false
     resolution:
-      integrity: sha512-UejweD1pDoXu+AD825lWwp4ZGtSwgnpZxb3JDViD7StjQz+Nb/6l093lx4OQ0foGWNRoc19mWy7BzL+UAK2iVg==
-  /logform/1.9.1:
+      integrity: sha512-cQKh8igo5QUhZ7lg38DYWAxMvjSAKG0A8wGSVimP07SIUEK2UO+arSRKbRZWtelMtN5V0Hkwh5ryOto/SshYIg==
+  /logform/1.10.0:
     dependencies:
       colors: 1.3.2
       fast-safe-stringify: 2.0.6
@@ -802,7 +816,7 @@ packages:
       triple-beam: 1.3.0
     dev: false
     resolution:
-      integrity: sha512-ZHrZE8VSf7K3xKxJiQ1aoTBp2yK+cEbFcgarsjzI3nt3nE/3O0heNSppoOQMUJVMZo/xiVwCxiXIabaZApsKNQ==
+      integrity: sha512-em5ojIhU18fIMOw/333mD+ZLE2fis0EzXl1ZwHx4iQzmpQi6odNiY/t+ITNr33JZhT9/KEaH+UPIipr6a9EjWg==
   /lru-cache/4.1.3:
     dependencies:
       pseudomap: 1.0.2
@@ -828,6 +842,11 @@ packages:
       node: '>=6'
     resolution:
       integrity: sha512-WQxG/5xYc3tMbYLXoXPm81ET2WDULiU5FxbuIoNbJqLOOI8zehXFdZuiUEgfdrU2mVB1pxBZUGlYORSrpuJreA==
+  /memory-pager/1.1.0:
+    dev: false
+    optional: true
+    resolution:
+      integrity: sha512-Mf9OHV/Y7h6YWDxTzX/b4ZZ4oh9NSXblQL8dtPCOomOtZciEHxePR78+uHFLLlsk01A6jVHhHsQZZ/WcIPpnzg==
   /mime-db/1.36.0:
     dev: false
     engines:
@@ -848,43 +867,43 @@ packages:
       node: '>=4'
     resolution:
       integrity: sha512-jf84uxzwiuiIVKiOLpfYk7N46TSy8ubTonmneY9vrpHNAnp0QBt2BxWV9dO3/j+BoVAb+a5G6YDPW3M5HOdMWQ==
-  /mongodb-core/3.1.3:
+  /mongodb-core/3.1.5:
     dependencies:
       bson: 1.1.0
       require_optional: 1.0.1
       safe-buffer: 5.1.2
     dev: false
     optionalDependencies:
-      saslprep: 1.0.1
+      saslprep: 1.0.2
     resolution:
-      integrity: sha512-dISiV3zHGJTwZpg0xDhi9zCqFGMhA5kDPByHlcaEp09NSKfzHJ7XQbqVrL7qhki1U9PZHsmRfbFzco+6b1h2wA==
-  /mongodb/3.1.4:
+      integrity: sha512-emT/tM4ZBinqd6RZok+EzDdtN4LjYJIckv71qQVOEFmvXgT5cperZegVmTgox/1cx4XQu6LJ5ZuIwipP/eKdQg==
+  /mongodb/3.1.6:
     dependencies:
-      mongodb-core: 3.1.3
+      mongodb-core: 3.1.5
       safe-buffer: 5.1.2
     dev: false
     engines:
       node: '>=4'
     resolution:
-      integrity: sha512-BGUxo4a/p5KtZpOn6+z6iZXTHfDxKDvibHQap9uMJqQouwoszvTIO/QbVZkaSX3Spny0jtTEeHc0FwfpGbtEzA==
-  /mongoose-legacy-pluralize/1.0.2/mongoose@5.2.14:
+      integrity: sha512-E5QJuXQoMlT7KyCYqNNMfAkhfQD79AT4F8Xd+6x37OX+8BL17GyXyWvfm6wuyx4wnzCCPoCSLeMeUN2S7dU9yw==
+  /mongoose-legacy-pluralize/1.0.2/mongoose@5.2.17:
     dependencies:
-      mongoose: /mongoose/5.2.14/mongoose@5.2.14
+      mongoose: /mongoose/5.2.17/mongoose@5.2.17
     dev: false
     id: registry.npmjs.org/mongoose-legacy-pluralize/1.0.2
     peerDependencies:
       mongoose: '*'
     resolution:
       integrity: sha512-Yo/7qQU4/EyIS8YDFSeenIvXxZN+ld7YdV9LqFVQJzTLye8unujAWPZ4NWKfFA+RNjh+wvTWKY9Z3E5XM6ZZiQ==
-  /mongoose/5.2.14/mongoose@5.2.14:
+  /mongoose/5.2.17/mongoose@5.2.17:
     dependencies:
       async: 2.6.1
       bson: 1.0.9
       kareem: 2.2.1
       lodash.get: 4.4.2
-      mongodb: 3.1.4
-      mongodb-core: 3.1.3
-      mongoose-legacy-pluralize: /mongoose-legacy-pluralize/1.0.2/mongoose@5.2.14
+      mongodb: 3.1.6
+      mongodb-core: 3.1.5
+      mongoose-legacy-pluralize: /mongoose-legacy-pluralize/1.0.2/mongoose@5.2.17
       mpath: 0.5.1
       mquery: 3.2.0
       ms: 2.0.0
@@ -894,9 +913,9 @@ packages:
     dev: false
     engines:
       node: '>=4.0.0'
-    id: registry.npmjs.org/mongoose/5.2.14
+    id: registry.npmjs.org/mongoose/5.2.17
     resolution:
-      integrity: sha512-0wRX2+08Fvx3iUWX2o33mDPLUsjR0HBFInwwclpfZVAb7Ps63XhYpkjQkqDMmHb7LNl6QVsRhdUIC47cU4EAPg==
+      integrity: sha512-AYmf+QYMUM3POzPen/tzuN9spJASHIuV5FUb1HNJurEAtKXL671zLXC60GPIMDVDZSvyGfGjbr4TI5Hy4UkVgw==
   /mpath/0.5.1:
     dev: false
     engines:
@@ -938,7 +957,7 @@ packages:
   /node-rest-client/3.1.0:
     dependencies:
       debug: 2.2.0
-      follow-redirects: 1.5.7
+      follow-redirects: 1.5.8
       xml2js: 0.4.19
     dev: false
     resolution:
@@ -1007,6 +1026,7 @@ packages:
       node: '>=4'
     resolution:
       integrity: sha1-nJRWmJ6fZYgBewQ01WCXZ1w9oF4=
+      tarball: 'http://registry.npmjs.org/p-is-promise/-/p-is-promise-1.1.0.tgz'
   /p-limit/2.0.0:
     dependencies:
       p-try: 2.0.0
@@ -1086,6 +1106,7 @@ packages:
     dev: false
     resolution:
       integrity: sha512-tQtKA9WIAhBF3+VLAseyMqZeBjW0AHJoxOtYqSUZNJxauErmLbVm2FW1y+J/YA9dUrAC39ITejlZWhVIwawkKw==
+      tarball: 'http://registry.npmjs.org/readable-stream/-/readable-stream-2.3.6.tgz'
   /regexp-clone/0.0.1:
     dev: false
     resolution:
@@ -1095,7 +1116,7 @@ packages:
       aws-sign2: 0.7.0
       aws4: 1.8.0
       caseless: 0.12.0
-      combined-stream: 1.0.6
+      combined-stream: 1.0.7
       extend: 3.0.2
       forever-agent: 0.6.1
       form-data: 2.3.2
@@ -1173,13 +1194,15 @@ packages:
     dev: false
     resolution:
       integrity: sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==
-  /saslprep/1.0.1:
+  /saslprep/1.0.2:
+    dependencies:
+      sparse-bitfield: 3.0.3
     dev: false
     engines:
       node: '>=6'
     optional: true
     resolution:
-      integrity: sha512-ntN6SbE3hRqd45PKKadRPgA+xHPWg5lPSj2JWJdJvjTwXDDfkPVtXWvP8jJojvnm+rAsZ2b299C5NwZqq818EA==
+      integrity: sha512-4cDsYuAjXssUSjxHKRe4DTZC0agDwsCqcMqtJAQPzC74nJ7LfAJflAtC1Zed5hMzEQKj82d3tuzqdGNRsLJ4Gw==
   /sax/1.2.4:
     dev: false
     resolution:
@@ -1221,6 +1244,13 @@ packages:
     dev: false
     resolution:
       integrity: sha1-CzpmK10Ewxd7GSa+qCsD+Dei70E=
+  /sparse-bitfield/3.0.3:
+    dependencies:
+      memory-pager: 1.1.0
+    dev: false
+    optional: true
+    resolution:
+      integrity: sha1-/0rm5oZWBWuks+eSqzM004JzyhE=
   /sshpk/1.14.2:
     dependencies:
       asn1: 0.2.4
@@ -1306,6 +1336,7 @@ packages:
     dev: false
     resolution:
       integrity: sha1-DdTJ/6q8NXlgsbckEV1+Doai4fU=
+      tarball: 'http://registry.npmjs.org/through/-/through-2.3.8.tgz'
   /tmp/0.0.33:
     dependencies:
       os-tmpdir: 1.0.2
@@ -1409,7 +1440,7 @@ packages:
       async: 2.6.1
       diagnostics: 1.1.1
       is-stream: 1.1.0
-      logform: 1.9.1
+      logform: 1.10.0
       one-time: 0.0.4
       readable-stream: 2.3.6
       stack-trace: 0.0.10
@@ -1486,11 +1517,10 @@ packages:
     dev: false
     name: asteroid
     resolution:
-      registry: 'https://registry.npmjs.org/'
       tarball: 'https://codeload.github.com/rocketchat/asteroid/tar.gz/a76a53254e381f9487aa2a9be3d874c9a2df6552'
     version: 0.6.1
 registry: 'https://registry.npmjs.org/'
 shrinkwrapMinorVersion: 9
 shrinkwrapVersion: 3
 specifiers:
-  bbot: ^1.3.1
+  bbot: ^1.3.2
