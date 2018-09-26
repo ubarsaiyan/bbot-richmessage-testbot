@@ -24,8 +24,16 @@ describe('richmessages testing', () => {
       await driver.findElement(By.id('pass')).sendKeys(config.password, Key.RETURN);
       await driver.wait(until.elementLocated(By.className('rc-message-box__textarea')), config.pageOpenTimeout);
       console.log("Message Textarea render\n");
-
-      const messageTextArea = await driver.findElement(By.className('rc-message-box__textarea'));
+    } catch(e) {
+      console.log("Tests failed");
+      console.log(e);
+    }     
+  })
+  after(() => {
+    driver.quit();
+  });
+  it('module exports function to create new credentials', async () => {
+    const messageTextArea = await driver.findElement(By.className('rc-message-box__textarea'));
 
       for (var i=0; i<tests.length; i++){
         console.log("Run test: "+tests[i].name);
@@ -41,17 +49,6 @@ describe('richmessages testing', () => {
         await tests[i].validate(lastMessage);
         console.log("Passed\n");
       }
-      console.log("Successfully passed all tests!");
-    } catch(e) {
-      console.log("Tests failed");
-      console.log(e);
-    } finally {
-      await driver.quit();
-    }
-    
-  })
-  it('module exports function to create new credentials', () => {
-    const credential = credentials('111')
-    expect(credential.constructor.name).to.equal('Credentials')
+      console.log("Successfully passed all tests!");  
   })
 })
