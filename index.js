@@ -1,6 +1,5 @@
 const bot = require('bbot')
 const richmsg = require('./richmessage.js')
-const create = require('./create.js')
 const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
 
 // `text` branch types simply respond when regex pattern is met
