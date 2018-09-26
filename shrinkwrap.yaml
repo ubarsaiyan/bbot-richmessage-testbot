@@ -1517,6 +1517,7 @@ packages:
     dev: false
     name: asteroid
     resolution:
+      registry: 'https://registry.npmjs.org/'
       tarball: 'https://codeload.github.com/rocketchat/asteroid/tar.gz/a76a53254e381f9487aa2a9be3d874c9a2df6552'
     version: 0.6.1
 registry: 'https://registry.npmjs.org/'

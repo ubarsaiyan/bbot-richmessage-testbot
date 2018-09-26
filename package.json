@@ -30,9 +30,19 @@
     "message-adapter": "rocketchat"
   },
   "dependencies": {
-    "bbot": "^1.3.2"
+    "bbot": "^1.3.2",
+    "chai": "^4.2.0",
+    "chromedriver": "^2.42.0",
+    "email-addresses": "^3.0.2",
+    "generate-password": "^1.4.0",
+    "glitchmagic": "^0.0.1",
+    "mocha": "^5.2.0",
+    "random-words": "^1.1.0",
+    "selenium-webdriver": "^4.0.0-alpha.1",
+    "turbproxy": "^0.0.3"
   },
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "test": "mocha ./*spec.js"
   }
 }
