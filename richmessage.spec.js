@@ -14,11 +14,13 @@ admin.createAccounts(credentials(uId).toObject())
 
 const config = {
   'botUsername': 'richMessageTestbotqusbot',
+  // 'botUsername': 'richmessagebot',
   'messageWaitTimeout':10000,
   'tabOpenTimeout':200,
-  'imageLoadTimeout':10000,
+  'imageLoadTimeout':8000,
   'pageOpenTimeout':20000,
   'botRoomUrl':`https://bots.rocket.chat/direct/richMessageTestbotqusbot`,
+  // 'botRoomUrl':`https://bots.rocket.chat/direct/richmessagebot`,
   'username': cred.user.username,
   'password': cred.user.password
 }
