@@ -52,7 +52,7 @@ bot.global.text(/image button with msg in chat window/i, (b) => {
 // 5. Multiple Text Buttons
 bot.global.text(/multiple text buttons/i, (b) => {
   b.envelope.write('Multiple buttons:')
-  b.envelope.attach({ 
+  b.envelope.attach({
     title: 'Multiple text buttons with url'
   })
   b.envelope.payload.quickReply({
@@ -90,7 +90,9 @@ bot.global.text(/horizontal text buttons/i, (b) => {
     is_webview: false
   })
   return b.respond().catch((err) => console.error(err))
-})  
+})
+
+// 7 & 8 deferred
 
 // 9. Url Button With Full Webview (default)
 bot.global.text(/button with full webview/i, (b) => {
