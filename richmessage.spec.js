@@ -1,18 +1,16 @@
-const admin = require('./admin')
-const credentials = require('./credentials')
-const generator = require('generate-password')
+const admin = require('./admin');
+const credentials = require('./credentials');
+const generator = require('generate-password');
 
-const uId = 'test'
-const rnd = generator.generate({ length: 3, numbers: true })
-credentials(uId).setEmail(`test${rnd}@test.com`)
-credentials(uId).setFramework('bbot')
-credentials(uId).generateUsername()
-credentials(uId).generatePassword()
-const cred = credentials(uId).generateRoom()
+const uId = 'test';
+const rnd = generator.generate({ length: 3, numbers: true });
+credentials(uId).setEmail(`test${rnd}@test.com`);
+credentials(uId).setFramework('bbot');
+credentials(uId).generateUsername();
+credentials(uId).generatePassword();
+const cred = credentials(uId).generateRoom();
 
-admin.createAccounts(credentials(uId).toObject())
-
-const config = {
+const seleniumConfig = {
   'botUsername': 'richMessageTestbotqusbot',
   // 'botUsername': 'richmessagebot',
   'messageWaitTimeout':10000,
@@ -27,37 +25,39 @@ const config = {
 
 require('chromedriver');
 var {Builder, By, Key, until} = require('selenium-webdriver');
-var driver = new Builder()
-  .forBrowser('chrome')
-  .build();
+var driver;
 const assert = require('assert');
 
-// const config = require('./test/config');
+// const seleniumConfig = require('./test/config');
 // const tests = require('./test/tests');
 
 describe('richmessages testing', () => {
   before(async () => {
     console.log("Webdriver start")
     try {
-      await driver.get(config.botRoomUrl);
+      await admin.createAccounts(cred.toObject());
+      driver = new Builder().forBrowser('chrome').build();
+      await driver.get(seleniumConfig.botRoomUrl);
       console.log("Initial Page load");
 
-      await driver.wait(until.elementLocated(By.id('emailOrUsername')), config.pageOpenTimeout);
+      await driver.wait(until.elementLocated(By.id('emailOrUsername')), seleniumConfig.pageOpenTimeout);
       console.log("Login element render");
 
-      await driver.findElement(By.id('emailOrUsername')).sendKeys(config.username);
-      await driver.findElement(By.id('pass')).sendKeys(config.password, Key.RETURN);
-      await driver.wait(until.elementLocated(By.className('rc-message-box__textarea')), config.pageOpenTimeout);
+      await driver.findElement(By.id('emailOrUsername')).sendKeys(seleniumConfig.username);
+      await driver.findElement(By.id('pass')).sendKeys(seleniumConfig.password, Key.RETURN);
+      await driver.wait(until.elementLocated(By.className('rc-message-box__textarea')), seleniumConfig.pageOpenTimeout);
       console.log("Message Textarea render\n");
     } catch(e) {
       console.log("Tests failed");
       console.log(e);
     }     
   })
-  after(() => {
+  after(async () => {
     driver.quit();
+    await admin.deleteAllUsersExceptAdmin();
+    credentials('RESET');
   });
-  it('module exports function to create new credentials', async () => {
+  it('should run all the richmessages acceptance tests', async () => {
     const messageTextArea = await driver.findElement(By.className('rc-message-box__textarea'));
 
       for (var i=0; i<tests.length; i++){
@@ -65,12 +65,12 @@ describe('richmessages testing', () => {
         let message = tests[i].message;
         await messageTextArea.sendKeys(message, Key.RETURN);
         console.log('- message sent to bot');
-        const lastMessageSelector = '.message:last-child [data-username="'+config.botUsername+'"]';
-        await driver.wait(until.elementLocated(By.css(lastMessageSelector)), config.messageWaitTimeout);
+        const lastMessageSelector = '.message:last-child [data-username="'+seleniumConfig.botUsername+'"]';
+        await driver.wait(until.elementLocated(By.css(lastMessageSelector)), seleniumConfig.messageWaitTimeout);
         console.log('- recieved reply from bot');
         let lastMessage = await driver.findElement(By.css('.message:last-child'));
         let lastMessageBy = await lastMessage.getAttribute('data-username');
-        assert.equal(lastMessageBy, config.botUsername);
+        assert.equal(lastMessageBy, seleniumConfig.botUsername);
         await tests[i].validate(lastMessage);
         console.log("Passed\n");
       }
@@ -92,7 +92,7 @@ tests.push({
 
     console.log("- click button");
     await buttons[0].click();
-    //await driver.sleep(config.tabOpenTimeout);
+    //await driver.sleep(seleniumConfig.tabOpenTimeout);
 
     const windowHandles = await driver.getAllWindowHandles();
     assert.equal(windowHandles.length, 2);
@@ -124,12 +124,12 @@ tests.push({
     console.log("- click button");
     
     await buttons[0].click();
-    const lastMessageSelector = '.message:last-child [data-username="'+config.botUsername+'"]';
-    await driver.wait(until.elementLocated(By.css(lastMessageSelector)), config.messageWaitTimeout);
+    const lastMessageSelector = '.message:last-child [data-username="'+seleniumConfig.botUsername+'"]';
+    await driver.wait(until.elementLocated(By.css(lastMessageSelector)), seleniumConfig.messageWaitTimeout);
 
     const newLastMessage = await driver.findElement(By.css('.message:last-child'));
     const newLastMessageBy = await lastMessage.getAttribute('data-username');
-    assert.equal(newLastMessageBy, config.botUsername);
+    assert.equal(newLastMessageBy, seleniumConfig.botUsername);
     console.log("- asserted new last messaage by Bot");
 
     const newLastMessageBody = await newLastMessage.findElement(By.css('.body'));
@@ -155,10 +155,10 @@ tests.push({
     assert.equal(tagName, 'img');
     console.log("- assert button is image");
 
-    await driver.sleep(config.imageLoadTimeout);
+    await driver.sleep(seleniumConfig.imageLoadTimeout);
     await imageButtons[0].click();
     console.log("- click button");
-    await driver.sleep(config.tabOpenTimeout);
+    await driver.sleep(seleniumConfig.tabOpenTimeout);
 
     const windowHandles = await driver.getAllWindowHandles();
     assert.equal(windowHandles.length, 2);
@@ -197,12 +197,12 @@ tests.push({
     await imageButtons[0].click();
     console.log("- click button");
 
-    const lastMessageSelector = '.message:last-child [data-username="'+config.botUsername+'"]';
-    await driver.wait(until.elementLocated(By.css(lastMessageSelector)), config.messageWaitTimeout);
+    const lastMessageSelector = '.message:last-child [data-username="'+seleniumConfig.botUsername+'"]';
+    await driver.wait(until.elementLocated(By.css(lastMessageSelector)), seleniumConfig.messageWaitTimeout);
 
     const newLastMessage = await driver.findElement(By.css('.message:last-child'));
     const newLastMessageBy = await lastMessage.getAttribute('data-username');
-    assert.equal(newLastMessageBy, config.botUsername);
+    assert.equal(newLastMessageBy, seleniumConfig.botUsername);
     console.log("- asserted new last messaage by Bot");
 
     const newLastMessageBody = await newLastMessage.findElement(By.css('.body'));
@@ -228,7 +228,7 @@ tests.push({
       let button = buttons[i];
       console.log("- click button "+(i+1));
       await button.click();
-      await driver.sleep(config.tabOpenTimeout);
+      await driver.sleep(seleniumConfig.tabOpenTimeout);
 
       windowHandles = await driver.getAllWindowHandles();
       assert.equal(windowHandles.length, 2);
@@ -266,7 +266,7 @@ tests.push({
       let button = buttons[i];
       console.log("- click button "+(i+1));
       await button.click();
-      await driver.sleep(config.tabOpenTimeout);
+      await driver.sleep(seleniumConfig.tabOpenTimeout);
 
       windowHandles = await driver.getAllWindowHandles();
       assert.equal(windowHandles.length, 2);
@@ -302,7 +302,7 @@ tests.push({
     // Assert title link
     console.log("- click title link.")
     await titleLink.click();
-    await driver.sleep(config.tabOpenTimeout);
+    await driver.sleep(seleniumConfig.tabOpenTimeout);
 
     let windowHandles = await driver.getAllWindowHandles();
     assert.equal(windowHandles.length, 2);
@@ -337,7 +337,7 @@ tests.push({
       let button = buttons[i];
       console.log("- click button "+(i+1));
       await button.click();
-      await driver.sleep(config.tabOpenTimeout);
+      await driver.sleep(seleniumConfig.tabOpenTimeout);
 
       windowHandles = await driver.getAllWindowHandles();
       assert.equal(windowHandles.length, 2);

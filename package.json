@@ -43,6 +43,6 @@
   },
   "scripts": {
     "start": "node index.js",
-    "test": "node index.js & mocha -t 30000 ./*spec.js"
+    "test": "node index.js & mocha -t 60000 ./*spec.js"
   }
 }
