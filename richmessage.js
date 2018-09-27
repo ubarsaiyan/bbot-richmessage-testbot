@@ -11,22 +11,14 @@ bot.global.text(/text button with url/i, (b) => {
   return b.respond().catch((err) => console.error(err))
 })
 
-// 2. Text Button With Msg in Chat Window (Working via custom JSON but quickReply not passing the msg field)
+// 2. Text Button With Msg in Chat Window
 bot.global.text(/text button with msg in chat window/i, (b) => {
-  // b.envelope.write('text button with msg in chat window')
-  // b.envelope.payload.quickReply({ 
-  //   msg: 'hello (message sent via RichMessageBot) :D',
-  //   text: 'hello in chat window',
-  // })
-  return b.respond({
-      "title": "text button with msg in chat window",
-      "actions": [{
-          "type": "button",
-          "text": "Say hello in chat window?",
-          "msg": "hello (message sent via RichMessageBot) :D",
-          "msg_in_chat_window": true
-      }]
-  }).catch((err) => console.error(err))
+  b.envelope.write('text button with msg in chat window')
+  b.envelope.payload.quickReply({ 
+    content: 'hello (message sent via RichMessageBot) :D',
+    text: 'hello in chat window',
+  })
+  return b.respond().catch((err) => console.error(err))
 })
 
 // 3. Image Button With Url

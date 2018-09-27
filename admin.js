@@ -1,10 +1,10 @@
-const bBot = require('bbot')
-const tp = require('turbproxy')
-const gm = require('glitchmagic')
+const bBot = require('bbot');
+const tp = require('turbproxy');
+const gm = require('glitchmagic');
 
 
 /** Setup accounts for user and bot, first creating room for joining them in. */
-async function createAccounts (credentials) {
+async function createAccounts(credentials) {
   const { user, bot, room } = credentials
   if (!!user && !!bot && !!room) {
     bBot.logger.info(`[admin] calling createAccounts...`)
@@ -18,12 +18,12 @@ async function createAccounts (credentials) {
       passwords[0] = bot.password;
       passwords[1] = user.password;
       let result = {}
-      
+
       result = await tp.createaccounts({
-         e: user.email,
-         g: room.name,
-         u: user.username,
-         p: passwords
+        e: user.email,
+        g: room.name,
+        u: user.username,
+        p: passwords
       })
       bBot.logger.info(`[admin] calling with USER ${JSON.stringify(user)}`)
       bBot.logger.info(`[admin] calling with BOT ${JSON.stringify(bot)}`)
@@ -42,31 +42,17 @@ async function createAccounts (credentials) {
   }
 }
 
-let projects = { 'bbot': { 'name': 'rocketchat-bbot'    },
-                 'hubot' : { 'name':  'rocketchat-hubot'  },
-                 'botkit' : {'name' :  'rocketchat-botkit'  },
-                 'botpress' : { 'name' : 'rocketchat-botpress' }
-               }
-                            
-
-function getRemix(framework, envvars) {
-  const proj = { 'name': projects[framework].name }
-  return gm.getRemixURL(proj, envvars)
-}
-
-async function nukeBots() {
-      bBot.logger.info(`[admin] arrg! nuke all BOTs...`)
-      try {
-        await tp.resetplayground()
-        
-      } catch (err) {
-        bBot.logger.error(`[admin] nuke bots failed error: ${err.message}`)
-        throw new Error('cannot cleanup playground due to server error.')
-      }
+async function deleteAllUsersExceptAdmin() {
+  bBot.logger.info(`[admin] arrg! nuke all BOTs...`)
+  try {
+    await tp.resetplayground()
+  } catch (err) {
+    bBot.logger.error(`[admin] nuke bots failed error: ${err.message}`)
+    throw new Error('cannot cleanup playground due to server error.')
+  }
 }
 
 module.exports = {
   createAccounts,
-  getRemix,
-  nukeBots
+  deleteAllUsersExceptAdmin
 }
