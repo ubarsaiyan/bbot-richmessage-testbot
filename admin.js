@@ -1,4 +1,5 @@
 const bBot = require('bbot');
+const richmsg = require('./richmessage.js');
 const tp = require('turbproxy');
 const gm = require('glitchmagic');
 
@@ -30,6 +31,11 @@ async function createAccounts(credentials) {
       bBot.logger.info(`[admin] calling with ROOM ${JSON.stringify(room)}`)
       bBot.logger.info(`[admin] calling with PASSOWRDS ${JSON.stringify(passwords)}`)
       bBot.logger.info(`[admin] createAccounts returned ${JSON.stringify(result)}`)
+      process.env.ROCKETCHAT_USER = bot.username;
+      process.env.ROCKETCHAT_PASSWORD = bot.password;
+      setTimeout(function() { //TODO: Replace setTimeout by a callback function
+        bBot.start();
+      }, 5000); // 🚀
     } catch (err) {
       bBot.logger.error(`[admin] createAccounts failed: ${err.message}`)
       throw new Error('could not create accounts due to a playground server error.')

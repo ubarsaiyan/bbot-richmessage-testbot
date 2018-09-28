@@ -34,6 +34,7 @@
     "chai": "^4.2.0",
     "chromedriver": "^2.42.0",
     "email-addresses": "^3.0.2",
+    "file-system": "^2.2.2",
     "generate-password": "^1.4.0",
     "glitchmagic": "^0.0.1",
     "mocha": "^5.2.0",
@@ -43,6 +44,6 @@
   },
   "scripts": {
     "start": "node index.js",
-    "test": "node index.js & mocha -t 60000 ./*spec.js"
+    "test": "node createAccounts.js & (sleep 10 && mocha -t 60000 ./*spec.js); node deleteAccounts.js"
   }
 }
