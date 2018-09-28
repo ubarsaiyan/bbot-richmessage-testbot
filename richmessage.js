@@ -15,10 +15,14 @@ bot.global.text(/text button with url/i, (b) => {
 bot.global.text(/text button with msg in chat window/i, (b) => {
   b.envelope.write('text button with msg in chat window')
   b.envelope.payload.quickReply({ 
-    content: 'hello (message sent via RichMessageBot) :D',
-    text: 'hello in chat window',
+    content: 'hello in chat window',
+    text: 'Say hello in chat window?',
   })
   return b.respond().catch((err) => console.error(err))
+})
+
+bot.global.text(/hello in chat window/i, (b) => {
+  return b.respond('received your \'hello in chat window\'').catch((err) => console.error(err))
 })
 
 // 3. Image Button With Url
@@ -39,6 +43,10 @@ bot.global.text(/image button with msg in chat window/i, (b) => {
     msg: 'I clicked the airplane'
   })
   return b.respond().catch((err) => console.error(err))
+})
+
+bot.global.text(/I clicked the airplane/i, (b) => {
+  return b.respond('received your response about clicking the airplane').catch((err) => console.error(err))
 })
 
 // 5. Multiple Text Buttons
