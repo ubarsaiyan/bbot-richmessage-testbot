@@ -6,7 +6,7 @@ const seleniumConfig = {
   'botUsername': cred.bot.username,
   'messageWaitTimeout':10000,
   'tabOpenTimeout':200,
-  'imageLoadTimeout':5000,
+  'imageLoadTimeout':10000,
   'pageOpenTimeout':20000,
   'botRoomUrl':`https://bots.rocket.chat/direct/${cred.bot.username}`,
   'username': cred.user.username,
