@@ -9,7 +9,7 @@
 1. Configure a new instance of the bot which is connected to the bot playground
 1. Run an automated set of tests against the bot to test platform functionality and bot logic.
 
-# How to run the bot
+# How to run the bot?
 
 Logon to [Rocket.Chat bot playground](https://bots.rocket.chat) and create an account (you will need admin rights) for the bot. Assign the role `bot` to it. 
 Clone this repository.
