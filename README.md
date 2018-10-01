@@ -12,7 +12,7 @@ This is your bBot on Rocket.Chat Bot playground!
 1. Check .env file for Rocket.Chat playground access credentials 
 
 
-# Hoe to run the bot
+# How to run the bot
 
 Change the variables in the `.env` file according to your needs. Then run `npm start`.
 
