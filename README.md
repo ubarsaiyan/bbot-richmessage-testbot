@@ -11,10 +11,11 @@
 
 # How to run the bot?
 
-Logon to [Rocket.Chat bot playground](https://bots.rocket.chat) and create an account (you will need admin rights) for the bot. Assign the role `bot` to it. 
-Clone this repository.
-Run `npm install`.
-Create a `.env` file according to the template below, replacing the credentials with the account created:
++ Logon to [Rocket.Chat bot playground](https://bots.rocket.chat) and create an account for the bot. (You will need admin rights)
++ Assign the role `bot` while creating the bot account above. 
++ Clone this repository.
++ Run `npm install`.
++ Create a `.env` file according to the template below, replacing the credentials with the account created:
 ```
 ROCKETCHAT_URL=https://bots.rocket.chat
 ROCKETCHAT_ROOM=general,richmessages
@@ -24,17 +25,19 @@ ROCKETCHAT_PASSWORD=richmessager
 RESPOND_TO_DM=true
 RESPOND_TO_EDITED=false
 ```
-Run `npm start` and interact with the bot on the bots playground.
++ Run `npm start` and interact with the bot on the bots playground.
 
 # How to test?
 
-No need to create bot or user accounts.
-Google Chrome should be present on the system.
-[Download Chromedriver](https://sites.google.com/a/chromium.org/chromedriver/downloads) and place executable on your system PATH.
-Clone this repository.
-Run `npm install`.
-Run `npm test`.
-(`npm test` executes `node createAccounts.js & (sleep 10 && mocha -t 60000 ./*spec.js); node deleteAccounts.js`).
++ No need to create bot or user accounts.
++ Create a `.env` file as above but you can leave out the `ROCKETCHAT_USER` and `ROCKETCHAT_PASSWORD` fields.
++ Google Chrome should be present on the system.
++ [Download Chromedriver](https://sites.google.com/a/chromium.org/chromedriver/downloads) and place executable on your system PATH.
++ Clone this repository.
++ Run `npm install`.
++ Run `npm test`.
+
+`npm test` executes `node createAccounts.js & (sleep 10 && mocha -t 60000 ./*spec.js); node deleteAccounts.js`. `createAccounts.js` script creates the bot and user accounts on the remote Rocket.Chat server. Then the richmessage acceptance tests are run using Mocha and Selenium. `deleteAccounts.js` script deletes the bot and user accounts created earlier to make sure the server returns to its previous state.
 
 # Bonus: Importing project's non-default branch from Github to Glitch
 
