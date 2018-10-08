@@ -30,7 +30,7 @@
     "message-adapter": "rocketchat"
   },
   "dependencies": {
-    "bbot": "^1.3.2",
+    "bbot": "^1.4.0",
     "chai": "^4.2.0",
     "chromedriver": "^2.42.0",
     "email-addresses": "^3.0.2",
