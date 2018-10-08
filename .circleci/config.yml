@@ -10,7 +10,6 @@ jobs:
     steps:
       - checkout
 
-      # Download and cache dependencies
       - restore_cache:
           keys:
           - v1-dependencies-{{ checksum "package.json" }}
@@ -24,6 +23,14 @@ jobs:
             echo "deb [ arch=amd64 ] http://dl.google.com/linux/chrome/deb/ stable main" | sudo tee /etc/apt/sources.list.d/google.list
             sudo apt-get update
             sudo apt-get install -y google-chrome-stable
+
+      - run:
+          name: Versions
+          command: |
+            npm --versions
+            node -v
+            git version
+            google-chrome-stable --version
 
       - run: npm install
 
