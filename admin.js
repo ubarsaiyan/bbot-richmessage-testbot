@@ -1,14 +1,13 @@
 const bBot = require('bbot');
-const richmsg = require('./richmessage.js');
+require('./richmessage.js');
 const tp = require('turbproxy');
-const gm = require('glitchmagic');
 
 
 /** Setup accounts for user and bot, first creating room for joining them in. */
 async function createAccounts(credentials) {
   const { user, bot, room } = credentials
   if (!!user && !!bot && !!room) {
-    bBot.logger.info(`[admin] calling createAccounts...`)
+    console.log(`[admin] calling createAccounts...`)
     try {
       if (user.username.match(/fail/)) throw new Error('forced fail for demo')
       // turbproxy createaccounts method signature
@@ -26,11 +25,11 @@ async function createAccounts(credentials) {
         u: user.username,
         p: passwords
       })
-      bBot.logger.info(`[admin] calling with USER ${JSON.stringify(user)}`)
-      bBot.logger.info(`[admin] calling with BOT ${JSON.stringify(bot)}`)
-      bBot.logger.info(`[admin] calling with ROOM ${JSON.stringify(room)}`)
-      bBot.logger.info(`[admin] calling with PASSOWRDS ${JSON.stringify(passwords)}`)
-      bBot.logger.info(`[admin] createAccounts returned ${JSON.stringify(result)}`)
+      console.log(`[admin] calling with USER ${JSON.stringify(user)}`)
+      console.log(`[admin] calling with BOT ${JSON.stringify(bot)}`)
+      console.log(`[admin] calling with ROOM ${JSON.stringify(room)}`)
+      console.log(`[admin] calling with PASSOWRDS ${JSON.stringify(passwords)}`)
+      console.log(`[admin] createAccounts returned ${JSON.stringify(result)}`)
       process.env.ROCKETCHAT_USER = bot.username;
       process.env.ROCKETCHAT_PASSWORD = bot.password;
       setTimeout(function() { //TODO: Replace setTimeout by a callback function
@@ -49,7 +48,7 @@ async function createAccounts(credentials) {
 }
 
 async function deleteAllUsersExceptAdmin() {
-  bBot.logger.info(`[admin] arrg! nuke all BOTs...`)
+  console.log(`[admin] arrg! nuke all BOTs...`)
   try {
     await tp.resetplayground()
   } catch (err) {
