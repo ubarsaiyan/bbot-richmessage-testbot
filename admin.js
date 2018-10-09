@@ -1,5 +1,3 @@
-const bBot = require('bbot');
-require('./richmessage.js');
 const tp = require('turbproxy');
 
 
@@ -32,15 +30,12 @@ async function createAccounts(credentials) {
       console.log(`[admin] createAccounts returned ${JSON.stringify(result)}`)
       process.env.ROCKETCHAT_USER = bot.username;
       process.env.ROCKETCHAT_PASSWORD = bot.password;
-      setTimeout(function() { //TODO: Replace setTimeout by a callback function
-        bBot.start();
-      }, 5000); // 🚀
     } catch (err) {
-      bBot.logger.error(`[admin] createAccounts failed: ${err.message}`)
+      console.error(`[admin] createAccounts failed: ${err.message}`)
       throw new Error('could not create accounts due to a playground server error.')
     }
   } else {
-    bBot.logger.error('[admin] createAccounts called without all attributes.')
+    console.error('[admin] createAccounts called without all attributes.')
     if (!user) throw new Error('could not create accounts, missing user attributes.')
     if (!bot) throw new Error('could not create accounts, missing bot attributes.')
     if (!room) throw new Error('could not create accounts, missing room attributes.')
@@ -52,7 +47,7 @@ async function deleteAllUsersExceptAdmin() {
   try {
     await tp.resetplayground()
   } catch (err) {
-    bBot.logger.error(`[admin] nuke bots failed error: ${err.message}`)
+    console.error(`[admin] nuke bots failed error: ${err.message}`)
     throw new Error('cannot cleanup playground due to server error.')
   }
 }

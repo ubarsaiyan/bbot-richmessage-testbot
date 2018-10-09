@@ -17,6 +17,7 @@
 + Run `npm install`.
 + Create a `.env` file according to the template below, replacing the credentials with the account created:
 ```
+BOT_FRAMEWORK=bbot
 ROCKETCHAT_URL=https://bots.rocket.chat
 ROCKETCHAT_ROOM=general,richmessages
 ROCKETCHAT_USE_SSL=true
@@ -37,7 +38,7 @@ RESPOND_TO_EDITED=false
 + Run `npm install`.
 + Run `npm test`.
 
-`npm test` executes `node createAccounts.js & (sleep 10 && mocha -t 60000 ./*spec.js); node deleteAccounts.js`. `createAccounts.js` script creates the bot and user accounts on the remote Rocket.Chat server. Then the richmessage acceptance tests are run using Mocha and Selenium. `deleteAccounts.js` script deletes the bot and user accounts created earlier to make sure the server returns to its previous state.
+`npm test` executes `node createAccounts.js & mocha ./*spec.js; node deleteAccounts.js`. `createAccounts.js` script creates the bot and user accounts on the remote Rocket.Chat server. Then the richmessage acceptance tests are run using Mocha and Selenium. `deleteAccounts.js` script deletes the bot and user accounts created earlier to make sure the server returns to its previous state.
 
 # Bonus: Importing project's non-default branch from Github to Glitch
 

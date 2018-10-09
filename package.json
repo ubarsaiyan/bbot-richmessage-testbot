@@ -44,6 +44,6 @@
   },
   "scripts": {
     "start": "node index.js",
-    "test": "node createAccounts.js & (sleep 10 && mocha -t 60000 ./*spec.js); node deleteAccounts.js &"
+    "test": "node createAccounts.js & (sleep 10 && mocha -t 60000 ./*spec.js --exit) && s=0 || s=$? ; node deleteAccounts.js & sleep 5 && exit $s"
   }
 }
