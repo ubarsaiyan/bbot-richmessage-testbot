@@ -32,18 +32,19 @@
   "dependencies": {
     "bbot": "^1.4.0",
     "chai": "^4.2.0",
-    "chromedriver": "^2.42.0",
-    "email-addresses": "^3.0.2",
+    "chromedriver": "^2.43.1",
+    "email-addresses": "^3.0.3",
     "file-system": "^2.2.2",
-    "generate-password": "^1.4.0",
+    "generate-password": "^1.4.1",
     "glitchmagic": "^0.0.1",
     "mocha": "^5.2.0",
     "random-words": "^1.1.0",
+    "richmessage-tests": "^1.1.0",
     "selenium-webdriver": "^4.0.0-alpha.1",
-    "turbproxy": "^0.0.3"
+    "turbproxy": "0.0.5"
   },
   "scripts": {
     "start": "node index.js",
-    "test": "node createAccounts.js & (sleep 10 && mocha -t 60000 ./*spec.js --exit) && s=0 || s=$? ; node deleteAccounts.js & sleep 8 && pkill -TERM -P $$ ; exit $s"
+    "test": "node test.js"
   }
 }
